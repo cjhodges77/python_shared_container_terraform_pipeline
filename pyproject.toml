@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "infrastructure-pipeline-lambda-build"
+version = "0.1.0"
+description = ""
+authors = [""]
+readme = "README.md"
+packages = [{include = "infrastructure_pipeline_lambda_build"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
