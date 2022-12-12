@@ -4,27 +4,28 @@
 
 This repository contains our tooling, linting rules and build pipeline helpers:
 
-- The `buildLambda` Jenkins shared library which should be used to build Lambdas.  
+- The `buildLambda` Jenkins shared library which should be used to build Lambdas.
   Located in `vars/buildLambda.groovy`.
 
 
-- The `aws-lambda-dev-base` image which contains development tooling.  
+- The `aws-lambda-dev-base` image which contains development tooling.
   Located in `images/aws-lambda-python-dev-base`.
 
 
-- The `aws-lambda-release-base` image which contains the latest patched version of Python.  
+- The `aws-lambda-release-base` image which contains the latest patched version of Python.
   Located in `images/aws-lambda-python-release-base`.
 
 
-- The `aws-lambda-container` Terraform module.  
+- The `aws-lambda-container` Terraform module.
   Located in `terraform/modules/aws-lambda-container`.
 
 
-- The `example-project` which shows an example of how to build a Lambda.  
+- The `example-project` which shows an example of how to build a Lambda.
   Located in `example-project`.
 
 ## What's left to do/wishlist?
 
+- Use batect bundles in example project to limit copy/paste. Make consistent updates across projects
 - Improve the deployment pipeline.
   - Could we trigger smoke tests as part of the deployment?
   - Can we promote through environments?
@@ -44,6 +45,6 @@ When the `infrastructure-pipeline-lambda-build` pipeline is triggered in Jenkins
 
 1. The environment is prepared using `tonistiigi/binfmt` which allows us to build `arm64` images for our M1+ users.
 2. A `test` tagged image of the dev and release images is created and pushed to ECR.
-3. The `example-project` is then built using `buildLambda`.  
+3. The `example-project` is then built using `buildLambda`.
    For this, the local version of the script used rather than the global one for testing purposes.
 4. If the project is built successfully, the built images are then pushed to ECR as `latest`.
