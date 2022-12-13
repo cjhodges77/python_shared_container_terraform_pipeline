@@ -1,4 +1,4 @@
-# Infrastructure Lambda Building Pipeline
+# Lambda Building Pipeline
 
 ## Introduction
 
